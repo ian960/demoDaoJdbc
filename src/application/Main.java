@@ -34,10 +34,19 @@ public class Main {
         System.out.println("Inserted! New Id = " + newSeller.getId());
 
         System.out.println("Test 5 seller update");
-        seller = sellerDao.findById(1);
+        seller = sellerDao.findById(4);
         seller.setName("Martha Waine");
         sellerDao.update(seller);
         System.out.println("Update completed");
+
+        System.out.println("Test 6: seller delete");
+        System.out.println("Deleting id 3");
+        sellerDao.deleteById(3);
+        System.out.println("Delete completed");
+        list = sellerDao.findAll();
+        for (Seller obj : list){
+            System.out.println(obj);
+        }
 
     }
 }
